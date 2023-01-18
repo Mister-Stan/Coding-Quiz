@@ -15,7 +15,7 @@
     <div class="timer">Time: <span id="time">0</span></div>
 
     <div class="wrapper">
-      <div id="start-screen" class="hide">
+      <div id="start-screen" class="start">
         <h1>Coding Quiz Challenge</h1>
         <p>
           Try to answer the following code-related questions within the time
@@ -23,21 +23,34 @@
           score/time by ten seconds!
         </p>
         <button id="start">Start Quiz</button>
-        <button onclick="myFunction()">Click me</button>
       </div>
-      <div id="questions" class="start">
+
+      <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices">
-        <button id="a"></button></br>
-        <button id="b"></button></br> 
-        <button id="c"></button></br>
-        <button id="d"></button>
-        
-        
+          <button
+            id="a"
+            onclick="checkQuestionAnswer(currentQuestion,'a');"
+          ></button>
+          <br />
+          <button
+            id="b"
+            onclick="checkQuestionAnswer(currentQuestion,'b');"
+          ></button>
+          <br />
+          <button
+            id="c"
+            onclick="checkQuestionAnswer(currentQuestion,'c');"
+          ></button>
+          <br />
+          <button
+            id="d"
+            onclick="checkQuestionAnswer(currentQuestion,'d');"
+          ></button>
         </div>
+        <button id="next-question">Next Question</button>
       </div>
-        <button id="next-question">Next question</button>
-        
+
       <div id="end-screen" class="hide">
         <h2>All done!</h2>
         <p>Your final score is <span id="final-score"></span>.</p>
@@ -50,9 +63,7 @@
       <div id="feedback" class="feedback hide"></div>
     </div>
 
-    <script src="./assets/js/questions.js"></script>
-    <script src="assets/js/logic.js"></script>                 
-
-
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/logic.js"></script>
   </body>
 </html>
