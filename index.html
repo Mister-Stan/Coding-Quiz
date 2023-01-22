@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
-
   <body>
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
@@ -22,17 +21,24 @@
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds!
         </p>
+		
+		  <!-- button to initialize the quiz -->
         <button id="start">Start Quiz</button>
       </div>
 
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices">
-			<button id="a" onclick="checkQuestionAnswer(currentQuestion,'a');" ></button> <br />
-			<button id="b" onclick="checkQuestionAnswer(currentQuestion,'b');" ></button> <br />
-			<button id="c" onclick="checkQuestionAnswer(currentQuestion,'c');" ></button> <br />
-			<button id="d" onclick="checkQuestionAnswer(currentQuestion,'d');" ></button>
-		</div>
+		  
+		  <!-- button with function of checking for current question and "a" answer -->
+         <button id="a" onclick="checkQuestionAnswer(currentQuestion,'a');" ></button> <br />
+      <!-- button with function of checking for current question and "b" answer -->
+		     <button id="b" onclick="checkQuestionAnswer(currentQuestion,'b');" ></button> <br />
+		  <!-- button with function of checking for current question and "c" answer -->
+		     <button id="c" onclick="checkQuestionAnswer(currentQuestion,'c');" ></button> <br />
+		  <!-- button with function of checking for current question and "d" answer -->
+		     <button id="d" onclick="checkQuestionAnswer(currentQuestion,'d');" ></button>
+		     </div>
       </div>
 
       <div id="end-screen" class="hide">
@@ -40,14 +46,18 @@
         <p>Your final score is <span id="final-score"></span>.</p>
         <p>
           Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
+          
+		  <!-- button to save the quiz result:initials and score  -->
+		  <button id="submit">Submit</button>
         </p>
       </div>
-
+		
+		<!-- div for user feedback after he answer the question -->
       <div id="feedback" class="feedback hide"></div>
     </div>
-      <script src="assets/js/questions.js"></script>
-    <script src="assets/js/logic.js"></script>
+
+	<script src="./assets/js/questions.js"></script>
+    <script src="./assets/js/logic.js"></script>
 
   </body>
 </html>
