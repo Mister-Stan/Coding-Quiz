@@ -2,7 +2,7 @@
 var timer = 75;
 var time = document.querySelector('#time');
 
-//initialize variable that actualize the timer from  setInterval function
+//initialize a variable that actualizes the timer from  setInterval function
 var refreshTimer;
 
 //initialize the quiz score
@@ -15,7 +15,7 @@ var currentQuestion = 0;
 
 var questionTitle = document.getElementById('question-title');
 
-//variables for the "a", "b", "c" and "d" answer
+//variables for the "a", "b", "c" and "d" answers
 var a = document.getElementById('a');
 var b = document.getElementById('b');
 var c = document.getElementById('c');
@@ -37,9 +37,9 @@ var myJsonString = JSON.stringify(quizQuestions);
 //variable with quiz questions in object format
 var myObject = JSON.parse(myJsonString);
 
-//function that is keeping track of time needed to finish the quiz
+//function that keeps track of the time needed to finish the quiz
 function startTimer() {
-	//adds in index.html the initial value of timer	
+	//adds in index.html the initial value of the timer	
 	time.innerText = timer;
 
 	//refresh the timer by seconds
@@ -47,7 +47,7 @@ function startTimer() {
 		//decrements timer
 		timer--;
 
-		//adds in index.html the value of timer
+		//adds in index.html the value of the timer
 		time.innerText = timer;
 
 		if (timer <= 0) {
@@ -102,7 +102,7 @@ function endQuiz() {
 	endScreen.classList.remove('hide');
 	endScreen.classList.add('start');
 
-	//the quiz score is equal with the value of the timer in seconds that is remaining
+	//the quiz score is equal to the value of the timer in seconds that is remaining
 	quizScore = timer;
 
 	//actualizing score in the final screen
@@ -116,7 +116,7 @@ function submitQuiz() {
 //saves the user initials and quiz score in localStorage
 localStorage.setItem(initials.value, quizScore);
 
-//redirect towards quiz highscores page
+//redirect towards quiz high scores page
 document.location.href = 'highscores.html';
 }
 
@@ -124,7 +124,7 @@ document.location.href = 'highscores.html';
 //function that checks user answer
 function checkQuestionAnswer(userCurrentQuestion, userAnswer) {
 
-//checks if the answer given for the current question is same as user answer
+//checks if the answer given for the current question is the same as the user's answer
 if(myObject[userCurrentQuestion].answer === userAnswer) {
 
 //gives user feedback
@@ -135,15 +135,15 @@ else{
 feedback.innerText = 'Wrong!';
 audioIncorrect.play();
 
-//takes 10 seconds from the timer for wrong answer
+//takes 10 seconds from the timer for a wrong answer
 timer = timer - 10;
 
 //stops setInterval function
 clearInterval(refreshTimer);
 
 if(timer <= 0) {
-//to stop the timer when reaches 0;
 
+//stops the timer when it reaches 0;
 timer = 0 ;
 timer.innerText = timer;
 
@@ -160,7 +160,7 @@ feedback.classList.remove('hide');
 //shows feedback after 0.7 seconds
 setTimeout(function(){feedback.classList.add('hide');}, 700);
 
-//goes to next index(next question)
+//goes to the next index(next question)
 currentQuestion++;
 
 //if are still questions to be answered
